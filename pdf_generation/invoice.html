@@ -1,0 +1,83 @@
+
+<div class="page-container">Page of</div>
+<div class="logo-container"><img style="height: 50px;" src= "{{image}}" /></div>
+<table class="invoice-info-container">
+<tbody>
+<tr>
+<td class="client-name" rowspan="2">{{client_name}}</td>
+<td>{{company_name}}</td>
+</tr>
+<tr>
+<td>{{address}}</td>
+</tr>
+<tr>
+<td>Invoice Date: <strong>{{today_date}}</strong></td>
+<td>{{zip_code}}</td>
+</tr>
+<tr>
+<td>Invoice No: <strong>{{invoice_number}}</strong></td>
+<td>{{company_email}}</td>
+</tr>
+</tbody>
+</table>
+<table class="line-items-container">
+<thead>
+<tr>
+<th class="heading-quantity">&nbsp;</th>
+<th class="heading-description">Description</th>
+<th class="heading-price">&nbsp;</th>
+<th class="heading-subtotal">Subtotal</th>
+</tr>
+</thead>
+<tbody>
+{% for item_info in items_list %}
+    <tr>
+    <td>&nbsp;</td>
+    <td>{{ item_info.item_name }}</td>
+    <td class="right">&nbsp;</td>
+    <td class="bold">{{ item_info.item_value }}</td>
+    </tr>
+{% endfor %}
+<tr>
+<td>&nbsp;</td>
+<td>{{item1}}</td>
+<td class="right">&nbsp;</td>
+<td class="bold">{{subtotal1}}</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>{{item2}}</td>
+<td class="right">&nbsp;</td>
+<td class="bold">{{subtotal2}}</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>{{item3}}</td>
+<td class="right">&nbsp;</td>
+<td class="bold">{{subtotal3}}</td>
+</tr>
+</tbody>
+</table>
+<table class="line-items-container has-bottom-border">
+<thead>
+<tr>
+<th>Payment Info</th>
+<th>Due By</th>
+<th>Total Due</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="payment-info">
+<div>Account No: <strong>{{account_num}}</strong></div>
+<div>Routing No: <strong>{{routing_num}}</strong></div>
+</td>
+<td class="large">{{month}}</td>
+<td class="large total">{{total}}</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">
+<div class="footer-info">{{company_email}}</div>
+
+</div>
